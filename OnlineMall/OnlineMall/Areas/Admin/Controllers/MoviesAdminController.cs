@@ -1,4 +1,5 @@
 ﻿using Models;
+using Models.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,13 +32,17 @@ namespace OnlineMall.Areas.Admin.Controllers
 
         // POST: Admin/MoviesAdmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Movie collection)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                return View(collection);
             }
             catch
             {
