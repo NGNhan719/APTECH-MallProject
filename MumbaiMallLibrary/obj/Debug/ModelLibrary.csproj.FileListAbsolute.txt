@@ -1,0 +1,24 @@
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\bin\Debug\MumbaiMallLibrary.dll.config
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\bin\Debug\MumbaiMallLibrary.dll
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\bin\Debug\MumbaiMallLibrary.pdb
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\bin\Debug\EntityFramework.dll
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\bin\Debug\EntityFramework.xml
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\obj\Debug\ModelLibrary.csprojAssemblyReference.cache
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\obj\Debug\ModelLibrary.csproj.CoreCompileInputs.cache
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\obj\Debug\ModelLibrary.csproj.CopyComplete
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\obj\Debug\MumbaiMallLibrary.dll
+D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MumbaiMallLibrary\obj\Debug\MumbaiMallLibrary.pdb
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\MumbaiMallLibrary.dll.config
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\MumbaiMallLibrary.dll
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\MumbaiMallLibrary.pdb
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\EntityFramework.dll
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\EntityFramework.xml
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\ModelLibrary.csprojAssemblyReference.cache
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\ModelLibrary.csproj.CoreCompileInputs.cache
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\ModelLibrary.csproj.CopyComplete
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\MumbaiMallLibrary.dll
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\MumbaiMallLibrary.pdb

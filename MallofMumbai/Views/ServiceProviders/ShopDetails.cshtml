@@ -1,0 +1,267 @@
+﻿@model MumbaiMallLibrary.ServiceProvider
+
+@{
+    ViewBag.Title = "ShopDetails";
+}
+
+<!-- BUSINESS INFORMATION -->
+<div id="business">
+    <div class="business container">
+        <div class="business-main">
+            <div class="pathbar">
+                <div class="path-info">
+                    <div class="path-root">
+                        @Html.ActionLink("Mumbai Mall", "Index", "Home")
+                    </div>
+                    <div class="path-page">
+                        @Html.ActionLink("Shop", "Shop", "ServiceProviders")
+                    </div>
+                    <div class="path-page">
+                        <a href="#">@Model.Name</a>
+                    </div>
+                </div>
+            </div>
+            <div class="previous-page">
+                <div class="previous-arrow">
+                    <button onclick="location.href='@Url.Action("Shop", "ServiceProviders")'"><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
+                </div>
+            </div>
+            <div class="business-info">
+                <div class="business-intro">
+                    <div class="biz-pic-container">
+                        <img src="@Url.Content("~/Content/image/" + @Model.Avatar)" alt="@Model.Name">
+                    </div>
+                    <div class="biz-paragraph">
+                        <div class="biz-paragraph-main">
+                            <h3 class="biz-name">@Model.Name</h3>
+                            <div class="biz-location location">
+                                <button>View on Map</button>
+                                <p class="biz-map">Level @Model.Floor</p>
+                            </div>
+                            <p class="biz-opening">Monday-Sunday 11:00am-7:00pm</p>
+                            <p class="biz-tel">(646) 954-3100</p>
+                            <div class="biz-summary">
+                                <p>@Model.Description</p>
+                            </div>
+                        </div>
+                        <div class="biz-category">
+                            <div class="category-wrapper">
+                                <div class="category-text">
+                                    <p>Categories:</p>
+                                </div>
+                                <div class="category-all">
+                                @foreach (var service in Model.Services)
+                                {
+                                    @Html.ActionLink(service.ServiceCategory.CategoryName, "Shop", "ServiceProviders", new { filter = service.ServiceCategory.Id}, null)
+                                }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="biz-social">
+                            <div class="social-wrapper">
+                                <p>Share</p>
+                                <div class="social-icon">
+                                    <div class="icon">
+                                        <a href="">
+                                            <i class="fab fa-facebook-square fa-2x"></i>
+                                        </a>
+                                    </div>
+                                    <div class="icon">
+                                        <a href="#">
+                                            <i class="fab fa-twitter-square fa-2x"></i>
+                                        </a>
+                                    </div>
+                                    <div class="icon">
+                                        <a href="#">
+                                            <i class="fab fa-pinterest-square fa-2x"></i>
+                                        </a>
+                                    </div>
+                                    <div class="icon">
+                                        <a href="#">
+                                            <i class="fas fa-envelope-square fa-2x"></i>
+                                        </a>
+                                    </div>
+                                    <div class="icon">
+                                        <a href="#">
+                                            <i class="fas fa-share-alt-square fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BUSINESS INFORMATION END -->
+<!-- Discovery SECTION -->
+<div id="d-region">
+    <div class="d-region">
+        <div class="d-region-header">
+            <div class="d-region-header-content">
+                <h3>Discover the magnificent architect of Mumbai</h3>
+                <p>Enjoy unique shopping, dining and experiences when exploring. Stay connected and follow <span><a href="#">@@MumbaiMall</a></span> for the latest updates.</p>
+            </div>
+            <div class="d-region-header-social">
+                <div class="social-item">
+                    <p>Follow us:</p>
+                    <div class="icon">
+                        <a href="#"><img src="@Url.Content("~/Content/image/sm-icon/instagram_black.svg")"></a>
+                    </div>
+                    <div class="icon">
+                        <a href="#"><img src="@Url.Content("~/Content/image/sm-icon/facebook_black.svg")"></a>
+                    </div>
+                    <div class="icon">
+                        <a href="#"><img src="@Url.Content("~/Content/image/sm-icon/twitter_black.svg")"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-region-gallery">
+            <div class="d-region-gallery-asset" style="height: calc(var(--top-value) * 4)">
+                <div class="d-gallery-content height-1 instagram" style="top: 0; left: calc(100%/3*0)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-1"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-2 instagram" style="top: 0; left: calc(100%/3*1)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-2"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-1 instagram" style="top: 0; left: calc(100%/3*2)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-3"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-1 instagram" style="top: var(--top-value); left: calc(100%/3*0)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-4"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-1 instagram" style="top: var(--top-value); left: calc(100%/3*2)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-5"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-1 instagram" style="top: calc(var(--top-value) * 2); left: calc(100%/3*0)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-6"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-1 instagram" style="top: calc(var(--top-value) * 2); left: calc(100%/3*1)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-7"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-2 instagram" style="top: calc(var(--top-value) * 2); left: calc(100%/3*2)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-8"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-1 instagram" style="top: calc(var(--top-value) * 3); left: calc(100%/3*0)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-9"></div>
+                    </div>
+                </div>
+                <div class="d-gallery-content height-1 instagram" style="top: calc(var(--top-value) * 3); left: calc(100%/3*1)">
+                    <div class="d-gallery-item">
+                        <div class="d-gallery-img-10"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-region-button">
+                <div class="button-more">View more</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- DISCOVERY SECTION END -->
+<!-- EXPLORE MORE SECTION -->
+<div id="explore">
+    <div class="explore container">
+        <div class="explore-wrapper">
+            <div class="explore-header">
+                <div class="e-header-text">
+                    <h2>More great shopping options</h2>
+                </div>
+                <div class="e-header-goback">
+                    <button>Back to directory</button>
+                </div>
+            </div>
+            <div class="explore-content">
+                <div class="e-content-wrapper">
+                    <div class="business-intro">
+                        <div class="biz-pic-container">
+                            <img src="@Url.Content("~/Content/image/sm-dior/436410-14_DiorCouture_Website_1000x610pxSept2019.jpg")" alt="Dior">
+                        </div>
+                        <div class="biz-paragraph">
+                            <div class="biz-paragraph-main">
+                                <h3 class="biz-name">Dior</h3>
+                                <div class="biz-summary">
+                                    <p>Dior offers a sophisticated shopping environment featuring a signature mix of women’s and men’s ready-to-wear, footwear, eyewear, leather goods and jewelry.</p>
+                                </div>
+                            </div>
+                            <div class="biz-button">
+                                <div class="biz-continue">
+                                    <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="business-intro">
+                        <div class="biz-pic-container">
+                            <img src="@Url.Content("~/Content/image/sm-banana/Approved_banana_website_Mar_0.jpg")" alt="Dior">
+                        </div>
+                        <div class="biz-paragraph">
+                            <div class="biz-paragraph-main">
+                                <h3 class="biz-name">Banana Republic</h3>
+                                <div class="biz-summary">
+                                    <p>Banana Republic is a global apparel and accessories brand focused on delivering modern, versatile classics designed for a life with no boundaries.</p>
+                                </div>
+                            </div>
+                            <div class="biz-button">
+                                <div class="biz-continue">
+                                    <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="business-intro">
+                        <div class="biz-pic-container">
+                            <img src="@Url.Content("~/Content/image/sm-faherty/Faherty_Hudson_Yards_Directory_2.jpg")" alt="Dior">
+                        </div>
+                        <div class="biz-paragraph">
+                            <div class="biz-paragraph-main">
+                                <h3 class="biz-name">Faherty</h3>
+                                <div class="biz-summary">
+                                    <p>Faherty is a family business striving to make thoughtful decisions for our community and planet. We work tirelessly to craft the highest-quality clothing with a sustainable mindset.</p>
+                                </div>
+                            </div>
+                            <div class="biz-button">
+                                <div class="biz-continue">
+                                    <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END OF EXPLORE MORE SECTION -->
+<!-- SIGN UP SECTION -->
+<div id="d-region">
+    <div class="d-region">
+        <div class="d-region-signup">
+            <div class="d-region-signup-content">
+                <h2>Stay in the know</h2>
+                <button>Sign up</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END OF SIGN UP SECTION -->

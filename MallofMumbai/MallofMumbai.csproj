@@ -1,0 +1,443 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED437971-70F3-409D-BF17-EFDE19A0A940}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MallofMumbai</RootNamespace>
+    <AssemblyName>MallofMumbai</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44311</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.1</TypeScriptToolsVersion>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\image\59803219001e0.jpg" />
+    <Content Include="Content\image\5ace022ebace7.jpg" />
+    <Content Include="Content\image\5dfbb92d53f7f.jpg" />
+    <Content Include="Content\image\5e5607ac92601.jpg" />
+    <Content Include="Content\image\60571a636472c.jpg" />
+    <Content Include="Content\image\60640013f2db0.jpg" />
+    <Content Include="Content\image\60642535937c0.jpg" />
+    <Content Include="Content\image\606473d519a2f.jpg" />
+    <Content Include="Content\image\6065c9d7612fa.jpg" />
+    <Content Include="Content\image\8866_about-hero-first_card_6-large.jpg" />
+    <Content Include="Content\image\ci-reel-cinema\5b8795bda7e48.jpg" />
+    <Content Include="Content\image\fc-blue-bottle-coffee\BBC_Pastries_PourOver_1000X610.jpg" />
+    <Content Include="Content\image\fc-electric-lemon\Chickpea Pasta_1000X610.jpg" />
+    <Content Include="Content\image\fc-fuku\Fuku_SpicyChickenSando %281%29 %281%29_1000X610.jpg" />
+    <Content Include="Content\image\fc-hudsonyard-grill\HYG_NF_519_1035_1000X610.png" />
+    <Content Include="Content\image\fc-laduree\Macaron Box Ambiance_1000X610.jpg" />
+    <Content Include="Content\image\fc-lilac-chocolate\Almond Bark_1000X610.jpg" />
+    <Content Include="Content\image\fc-mecaco-little-spain\Approved_MLS_WebImg_Mar9_1000X610.jpg" />
+    <Content Include="Content\image\fc-mecaco-little-spain\Approved_MLS_WebImg_SpanishDiner11_website+1000X610.jpg" />
+    <Content Include="Content\image\fc-miznon\pitas_1000X610.jpg" />
+    <Content Include="Content\image\fc-neuhaus-chocolate\Neuhaus-variety-40.jpg" />
+    <Content Include="Content\image\fc-peak-res\Peak-Restaurant_256_1585947862_1440x810 12.2.jpg" />
+    <Content Include="Content\image\fc_bluestone_lane\Approved_bluestone_toast_website.png" />
+    <Content Include="Content\image\fc_dylancandybar\Approved_lollipops_website.jpeg" />
+    <Content Include="Content\image\fc_estiatoriomiros\Fish in Sea Salt %28Credit estiatorio Milos%29_1000X610.jpg" />
+    <Content Include="Content\image\fc_hero\2019-11-26 Wild Ink_FSP0414_JPEG 2500px DB.jpg" />
+    <Content Include="Content\image\fc_hero\Batata.jpg" />
+    <Content Include="Content\image\fc_hero\queensyrd beer.jpg" />
+    <Content Include="Content\image\fc_hero\takeout milos wine bar image_1920X1200.jpg" />
+    <Content Include="Content\image\fc_jackcoffee\Approved_jack%27s 1000X610.png" />
+    <Content Include="Content\image\fc_Mercado\Leña_interior_1000X610.jpg" />
+    <Content Include="Content\image\fc_Mercado\Mercado_website_1000X610.png" />
+    <Content Include="Content\image\fc_miloswinebar\Approved_milos_wine_bar_1000X610.jpg" />
+    <Content Include="Content\image\fc_queenyard\Queensyard_Interiors%28Cafe%29_007 1000X610.png" />
+    <Content Include="Content\image\fc_queenyard\VDay duck_1000X610.jpg" />
+    <Content Include="Content\image\fc_shakeshack\Approved_food combo_1000X610.jpg" />
+    <Content Include="Content\image\gallery\01b7ff8d54379932128e067540e5aaa265efe4524c76dcf07d477a5dbd806106.jpg" />
+    <Content Include="Content\image\gallery\022318934a335500b671bfec3ae0681ee861fda237be3f1d02d8da346dfc9b24.jpg" />
+    <Content Include="Content\image\gallery\0bc6f718efe34d695d7722e8921be0113d3dffd1c6888eee2bd86141145f8370.jpg" />
+    <Content Include="Content\image\gallery\1239c8ff8c9a4f530fe1823a68017a5eaa8ce016613cb3764619e08195e29756.jpg" />
+    <Content Include="Content\image\gallery\19b200510cbdb052b2a5265a5e0d1b4420b5cdbe69052170cd5ccc1b872f231c.jpg" />
+    <Content Include="Content\image\gallery\25d7932e9fea6724acf152f81a28a9391467750c3685208abf8bb4363614e25c.jpg" />
+    <Content Include="Content\image\gallery\264fd2319686ceef1828eac7bc0377ffc37646ad7994748b489ec5c2e0e440f4.jpg" />
+    <Content Include="Content\image\gallery\2e90f5a37cd3b909a1acf348c2cfd1ca60eb86479b5859baf942bdf76f70f30e.jpg" />
+    <Content Include="Content\image\gallery\34241f2259fe3f9f87da756526d451080caa5a31e8588984a7bf9c52f5147ef2.jpg" />
+    <Content Include="Content\image\gallery\3d02a29b797e14de5f46cb58996365613f916f733d47a2bce7cfcaf0a1fb50f0.jpg" />
+    <Content Include="Content\image\gallery\4b09532ac414395e5fd32001c94f6542e381c0f08a8357b02e71b0d1e1cc8516.jpg" />
+    <Content Include="Content\image\gallery\5e5875bb2c5339e6d2504ad5d21051daa1a1b18dbcd96a21c41def434c3b87db.jpg" />
+    <Content Include="Content\image\gallery\5e60edaf252936ad77200a4bd89cb9b72d899665f0d53bdb35a038a317a557ff.jpg" />
+    <Content Include="Content\image\gallery\6a0ed77704573853b8f79f92dd2812b7772613ced322fd91041490911fafe76d.jpg" />
+    <Content Include="Content\image\gallery\78d6f5c2e85a3f2296fbf346f3d4f80ff4f90822da40c3f912ab1cc8ea80d978.jpg" />
+    <Content Include="Content\image\gallery\7a904ae5bc622e22c0dd7642b1b6a6df9b8b0d516c8eec137de9a8a6f5d0d39b.jpg" />
+    <Content Include="Content\image\gallery\7e2a07624c039a6fd11338de91b548eeecaa78f3a16660e4e03890623561aa6b.jpg" />
+    <Content Include="Content\image\gallery\7fe29ee8d34e3e34b57c790c20fcf4f93832358d7987b4c7b7ed570755289891.jpg" />
+    <Content Include="Content\image\gallery\8650c74faf68102a2706249ab0f11f2811702fae1f306308b41a19cb8df1cb92.jpg" />
+    <Content Include="Content\image\gallery\86f99f09016bc4076a012aed450e45ee2c66c31b7be08abeff903b647fa4516d.jpg" />
+    <Content Include="Content\image\gallery\8973faea22f96f5986537e4bb1e2b080616ccf24a30a26086c2d90200edf44b5.jpg" />
+    <Content Include="Content\image\gallery\a6cc3df92ae16cb12f51cd3d8863c49c923fd9c4e89f0fd510125f0850e33da6.jpg" />
+    <Content Include="Content\image\gallery\a8a1a9103b0e4beca72b94383d0631a27cad9fdf46bc517d920751a24f7da662.jpg" />
+    <Content Include="Content\image\gallery\b7f40b319da31065301a05c7212393534a885df6aa00b142ef4aa6c536021c95.jpg" />
+    <Content Include="Content\image\gallery\bd8a838d25ec6b65f423664d773fbde63a06aeafdc1a28211519753745e9998f.jpg" />
+    <Content Include="Content\image\gallery\bde997c3a8c810889207c4e9c5d4e5ab291e5dd9b5c8a09158d5f0cfdc233b6d.jpg" />
+    <Content Include="Content\image\gallery\bfd1ce1d3710a9869bed2b84508663e324b460bba18c3f49d82ec0b93af7405e.jpg" />
+    <Content Include="Content\image\gallery\c00260377bf94ffa05e0ba0377cd43f9c59a73e87e037b54e065ec61bae85018 %281%29.jpg" />
+    <Content Include="Content\image\gallery\c00260377bf94ffa05e0ba0377cd43f9c59a73e87e037b54e065ec61bae85018.jpg" />
+    <Content Include="Content\image\gallery\cc1447e4a51b00330c3c140012e5cdb2c39a53a0310b65cc792e6d15d0e2ac07.jpg" />
+    <Content Include="Content\image\gallery\d168d4976c7279179777853efa099778d8b69b38a7433e9673f3374d20352954.jpg" />
+    <Content Include="Content\image\gallery\d330495e1be44c635922d6100804a8a9e62120e3a919415d66b33679659fc015.jpg" />
+    <Content Include="Content\image\gallery\d5b16c5930fe10d0901c6dee92ff9d445e614604960fb58a7744564afafbde56.jpg" />
+    <Content Include="Content\image\gallery\d930cf1de2972927de15915904e7b009d61a4551fe90dea920de60fb86b99f9a.jpg" />
+    <Content Include="Content\image\gallery\e29824fc304310018460d05cf24cf227b08c0dbda18e39ffc475e5555a89e6b2.jpg" />
+    <Content Include="Content\image\gallery\e2f51966b26da1bdd3233f9b8263b49eeed438bf4480cae32af9dc9b147a712d.jpg" />
+    <Content Include="Content\image\gallery\e862e0e5afd3c7c664b21d79154b302fc9b0946d711ddf82e96bc4dbe9e53af9.jpg" />
+    <Content Include="Content\image\gallery\e8f39bd5ed4d0118a303767f2c645b7b3e47db4d4ce37ae626fb1a9d9d51d726.jpg" />
+    <Content Include="Content\image\gallery\f6667357b6c984144aba4006d6143876456d55858225a1384d98c5b09f4b99d5.jpg" />
+    <Content Include="Content\image\gallery\fb1b6b26435e6998893e1598d5adf042387efefa7cd1b7fe8cda5809d8451591.jpg" />
+    <Content Include="Content\image\icon\facebook_black.svg" />
+    <Content Include="Content\image\icon\icons8_play_button_32px.png" />
+    <Content Include="Content\image\icon\instagram_black.svg" />
+    <Content Include="Content\image\icon\showlistbg-h.png" />
+    <Content Include="Content\image\icon\showlistbg-mob.png" />
+    <Content Include="Content\image\icon\twitter_black.svg" />
+    <Content Include="Content\image\logo-1.png" />
+    <Content Include="Content\image\logo.png" />
+    <Content Include="Content\image\movie\P_HO00008235.jpg" />
+    <Content Include="Content\image\movie\P_HO00008247.jpg" />
+    <Content Include="Content\image\movie\P_HO00008305.jpg" />
+    <Content Include="Content\image\movie\P_HO00008331.jpg" />
+    <Content Include="Content\image\movie\P_HO00008377.jpg" />
+    <Content Include="Content\image\sm-banana\Approved_banana_website_Mar_0.jpg" />
+    <Content Include="Content\image\sm-dior\436410-14_DiorCouture_Website_1000x610pxSept2019.jpg" />
+    <Content Include="Content\image\sm-dior\436412-07_DiorCouture_Website_1000x610pxSept2019_.jpg" />
+    <Content Include="Content\image\sm-faherty\Faherty_Hudson_Yards_Directory_2.jpg" />
+    <Content Include="Content\image\sm-faherty\Faherty_Hudson_Yards_Directory_3.jpg" />
+    <Content Include="Content\image\sm-rudsak\SS20_1_1000X610.png" />
+    <Content Include="Content\image\sp-bvlgari\5e07c84aa57ce.jpg" />
+    <Content Include="Content\image\sp-bvlgari\5e07c84b33987.jpg" />
+    <Content Include="Content\image\sp-christianlouloutin\5b8e24ec33aef.jpg" />
+    <Content Include="Content\image\sp-christianlouloutin\5dea985ba3dd7.jpg" />
+    <Content Include="Content\image\sp-christianlouloutin\5dea985beed7a.jpg" />
+    <Content Include="Content\image\sp-christianlouloutin\5dea985c36a0d.jpg" />
+    <Content Include="Content\image\sp-christianlouloutin\5df20cba0b992.png" />
+    <Content Include="Content\image\sp-christianlouloutin\bg.jpg" />
+    <Content Include="Content\image\sp-harrywinston\569c9b0097cae.png.optimized.jpg" />
+    <Content Include="Content\image\sp-harrywinston\569c9b00a6138.png.optimized.jpg" />
+    <Content Include="Content\image\sp-harrywinston\5df3c9eccbb6b.png" />
+    <Content Include="Content\image\sp-levelshoes\180120_Level_Shoes_Social_Shot_03_0526-1.jpg" />
+    <Content Include="Content\image\sp-levelshoes\LevelIlluminate_0995.jpg" />
+    <Content Include="Content\image\sp-lv\57c674a74d494.jpg" />
+    <Content Include="Content\image\sp-lv\5df20e26b7881.png" />
+    <Content Include="Content\image\sp-robertocavalli\5655a225c7ea1.png.optimized.jpg" />
+    <Content Include="Content\image\sp-robertocavalli\56b71c7828948.png.optimized.jpg" />
+    <Content Include="Content\image\sp-robertocavalli\5df3c55fe426a.png" />
+    <Content Include="Content\image\sp-tiffanyco\5a8d6cf4374d4.jpg" />
+    <Content Include="Content\image\sp-tiffanyco\5a8d6cf4642d0.jpg" />
+    <Content Include="Content\image\sp-tiffanyco\5df8deb3ed970.png" />
+    <Content Include="Content\image\the-dubai-mall-fashion-avenue-expansion-exterior-ytgfbv-66ythg.jpg" />
+    <Content Include="Content\image\thedubaimall.jpg" />
+    <Content Include="Content\site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceProvidersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Views\Shared\_GalleryPartial.cshtml" />
+    <Content Include="Views\Shared\_SignUpPartial.cshtml" />
+    <Content Include="Views\ServiceProviders\Create.cshtml" />
+    <Content Include="Views\ServiceProviders\Delete.cshtml" />
+    <Content Include="Views\ServiceProviders\Details.cshtml" />
+    <Content Include="Views\ServiceProviders\Edit.cshtml" />
+    <Content Include="Views\ServiceProviders\Index.cshtml" />
+    <Content Include="Views\ServiceProviders\Shop.cshtml" />
+    <Content Include="Views\ServiceProviders\ShopDetails.cshtml" />
+    <Content Include="Views\ServiceProviders\FoodCourt.cshtml" />
+    <Content Include="Views\ServiceProviders\Showtime.cshtml" />
+    <Content Include="Views\ServiceProviders\FoodCourtDetails.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MumbaiMallLibrary\ModelLibrary.csproj">
+      <Project>{DE1CC442-7085-4BF0-A9C1-342389BDC4EC}</Project>
+      <Name>ModelLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58990</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44311/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,122 @@
+﻿@model IEnumerable<MumbaiMallLibrary.ShowTime>
+
+@{
+    ViewBag.Title = "Movie";
+}
+
+<!-- CINEMA INFORMATION -->
+<div id="cinema">
+    <div class="cinema container">
+        <div class="cinema-main">
+            <div class="pathbar">
+                <div class="path-info">
+                    <div class="path-root">
+                        <a href="#">Mumbai Mall</a>
+                    </div>
+                    <div class="path-page">
+                        <a href="#">Cinema</a>
+                    </div>
+                </div>
+            </div>
+            <div class="previous-page">
+                <div class="previous-arrow">
+                    <button><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
+                </div>
+            </div> 
+            <div class="cinema-info">
+                <div class="cinema-intro">
+                    <div class="biz-pic-container">
+                        <img src="" alt="">
+                    </div>
+                    <div class="biz-paragraph">
+                        <div class="biz-paragraph-main">
+                            <h3 class="biz-name">VOX Cinemas</h3>
+                            <div class="biz-location location">
+                                <button>View on Map</button>
+                                <p class="biz-map">Level 2</p>
+                            </div>
+                            <p class="biz-opening">Monday-Sunday 10:00am-10:00pm</p>
+                            <p class="biz-tel">600599905</p>
+                            <div class="biz-summary">
+                                <p>VOX Cinemas at Mall of the Emirates offers the biggest blockbusters using the best and the latest in technology and comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CINEMA INFORMATION END -->
+<!-- MOVIE LIST SECTION -->
+<div id="movie">
+    <div class="movie container">
+        <div class="movie-main">
+            <div class="m-header">
+                <div class="m-header-text">
+                    <h2>Book your movie tickets</h2>
+                </div>
+            </div>
+            <div class="m-navbar">
+                <ul class="m-nav">
+                    <li class="nav-cal active"><button>Today</button></li>
+                    <li class="nav-cal"><button>Tomorrow</button></li>
+                    <li class="nav-cal"><button>Thu 25 apr</button></li>
+                    <li class="nav-cal"><button>Fri 26 apr</button></li>
+                    <li class="nav-cal"><button>Sat 27 apr</button></li>
+                    <li class="nav-cal"><button>Sun 28 apr</button></li>
+                    <li class="nav-cal"><button>Mon 29 apr</button></li>
+                </ul>
+            </div>
+            <div class="m-content">
+                <div class="m-content-wrapper">
+                    <div class="m-movie-card">
+                    @foreach (var movieG in Model.ToList().GroupBy(obj => obj.Movie))
+                    {
+                        <div class="m-movie-poster">
+                            <img src="@Url.Content("~/Content/image/movie/" + movieG.Key.Avatar)" alt="@movieG.Key.Name">
+                        </div>
+                        <div class="m-movie-data">
+                            <div class="m-movie-info">
+                                <div class="m-movie-info-wrapper">
+                                    <h3 class="movie-name">@movieG.Key.Name</h3>
+                                    <ul class="movie-spec">
+                                        <li class="spec-pg">@movieG.Key.Pg</li>
+                                        <li class="spec-time">@movieG.Key.RunningTime min</li>
+                                    </ul>
+                                    <button class="movie-trailer">Watch trailer</button>
+                                </div>
+                            </div>
+                            <div class="m-movie-plot">
+                                <p class="plot-summary">@movieG.Key.Introduction</p>
+                            </div>
+                            <div class="m-movie-screen">
+                            @foreach (var screenHallG in movieG.GroupBy(obj => obj.ScreenHall))
+                            {
+                                <div class="m-screen-block">
+                                    <p>@screenHallG.Key.ScreenName</p>
+                                    <ul class="m-screen-showtime">
+                                    @foreach (var item in screenHallG)
+                                    {
+                                        <li><a href="#">@item.StartHour</a></li>
+                                    }
+                                    </ul>
+                                </div>
+                            }
+                            </div>
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MOVIE LIST SECTION END -->
+<!-- SIGN UP SECTION -->
+<div id="d-region">
+    <div class="d-region">
+        @Html.Partial("_SignUpPartial")
+    </div>
+</div>
+<!-- END OF SIGN UP SECTION -->
