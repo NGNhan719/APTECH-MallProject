@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="malldbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CreditCard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CardOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CardType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExpiredDate" Type="DateTime" Precision="3" />
+    <Property Name="CVC" Type="Int32" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_CreditCard" FromRole="CreditCard" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rate" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Thumbnail" Type="String" MaxLength="2083" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Mall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Avatar" Type="String" MaxLength="2083" FixedLength="false" Unicode="false" />
+    <Property Name="FromDay" Type="Int32" />
+    <Property Name="ToDay" Type="Int32" />
+    <Property Name="Opened" Type="Time" Precision="0" />
+    <Property Name="Closed" Type="Time" Precision="0" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RunningTime" Type="Int32" />
+    <Property Name="Pg" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Trailer" Type="String" MaxLength="2083" FixedLength="false" Unicode="false" />
+    <Property Name="Avatar" Type="String" MaxLength="2083" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ShowTimes" Relationship="Self.FK_ShowTime_Movie" FromRole="Movie" ToRole="ShowTime" />
+  </EntityType>
+  <EntityType Name="ScreenHall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScreenName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SeatQty" Type="Int32" />
+    <Property Name="ServiceProviderId" Type="Int32" />
+    <Property Name="Avatar" Type="String" MaxLength="2083" FixedLength="false" Unicode="false" />
+    <Property Name="FromDay" Type="Byte" />
+    <Property Name="ToDay" Type="Byte" />
+    <Property Name="Opened" Type="Time" Precision="0" />
+    <Property Name="Closed" Type="Time" Precision="0" />
+    <NavigationProperty Name="ServiceProvider" Relationship="Self.FK_ScreenHall_ServiceProvider" FromRole="ScreenHall" ToRole="ServiceProvider" />
+    <NavigationProperty Name="ShowTimes" Relationship="Self.FK_ShowTime_Screen" FromRole="ScreenHall" ToRole="ShowTime" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderId" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <NavigationProperty Name="ServiceCategory" Relationship="Self.FK_Service_ServiceCategory" FromRole="Service" ToRole="ServiceCategory" />
+    <NavigationProperty Name="ServiceProvider" Relationship="Self.FK_Service_ServiceProvider" FromRole="Service" ToRole="ServiceProvider" />
+  </EntityType>
+  <EntityType Name="ServiceCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <NavigationProperty Name="Services" Relationship="Self.FK_Service_ServiceCategory" FromRole="ServiceCategory" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="ServiceProvider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Floor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Avatar" Type="String" MaxLength="2083" FixedLength="false" Unicode="false" />
+    <Property Name="FromDay" Type="Int32" />
+    <Property Name="ToDay" Type="Int32" />
+    <Property Name="Opened" Type="Time" Precision="0" />
+    <Property Name="Closed" Type="Time" Precision="0" />
+    <NavigationProperty Name="ScreenHalls" Relationship="Self.FK_ScreenHall_ServiceProvider" FromRole="ServiceProvider" ToRole="ScreenHall" />
+    <NavigationProperty Name="Services" Relationship="Self.FK_Service_ServiceProvider" FromRole="ServiceProvider" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="ShowTime">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="StartHour" Type="Time" Precision="0" />
+    <Property Name="TotalTicket" Type="Int32" />
+    <Property Name="MovieId" Type="Int32" />
+    <Property Name="ScreenId" Type="Int32" />
+    <NavigationProperty Name="Movie" Relationship="Self.FK_ShowTime_Movie" FromRole="ShowTime" ToRole="Movie" />
+    <NavigationProperty Name="ScreenHall" Relationship="Self.FK_ShowTime_Screen" FromRole="ShowTime" ToRole="ScreenHall" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_ShowTime" FromRole="ShowTime" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="SeatNo" Type="Int32" />
+    <Property Name="ShowTimeId" Type="Int32" />
+    <Property Name="CreditCardId" Type="Int32" />
+    <NavigationProperty Name="CreditCard" Relationship="Self.FK_Ticket_CreditCard" FromRole="Ticket" ToRole="CreditCard" />
+    <NavigationProperty Name="ShowTime" Relationship="Self.FK_Ticket_ShowTime" FromRole="Ticket" ToRole="ShowTime" />
+  </EntityType>
+  <Association Name="FK_Ticket_CreditCard">
+    <End Role="CreditCard" Type="Self.CreditCard" Multiplicity="0..1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreditCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="CreditCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowTime_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="0..1" />
+    <End Role="ShowTime" Type="Self.ShowTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShowTime">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScreenHall_ServiceProvider">
+    <End Role="ServiceProvider" Type="Self.ServiceProvider" Multiplicity="0..1" />
+    <End Role="ScreenHall" Type="Self.ScreenHall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceProvider">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ScreenHall">
+        <PropertyRef Name="ServiceProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowTime_Screen">
+    <End Role="ScreenHall" Type="Self.ScreenHall" Multiplicity="0..1" />
+    <End Role="ShowTime" Type="Self.ShowTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ScreenHall">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShowTime">
+        <PropertyRef Name="ScreenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_ServiceCategory">
+    <End Role="ServiceCategory" Type="Self.ServiceCategory" Multiplicity="0..1" />
+    <End Role="Service" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_ServiceProvider">
+    <End Role="ServiceProvider" Type="Self.ServiceProvider" Multiplicity="0..1" />
+    <End Role="Service" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceProvider">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ticket_ShowTime">
+    <End Role="ShowTime" Type="Self.ShowTime" Multiplicity="0..1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShowTime">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="ShowTimeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="malldbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="CreditCards" EntityType="Self.CreditCard" />
+    <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
+    <EntitySet Name="Galleries" EntityType="Self.Gallery" />
+    <EntitySet Name="Malls" EntityType="Self.Mall" />
+    <EntitySet Name="Movies" EntityType="Self.Movie" />
+    <EntitySet Name="ScreenHalls" EntityType="Self.ScreenHall" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="ServiceCategories" EntityType="Self.ServiceCategory" />
+    <EntitySet Name="ServiceProviders" EntityType="Self.ServiceProvider" />
+    <EntitySet Name="ShowTimes" EntityType="Self.ShowTime" />
+    <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+    <AssociationSet Name="FK_Ticket_CreditCard" Association="Self.FK_Ticket_CreditCard">
+      <End Role="CreditCard" EntitySet="CreditCards" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowTime_Movie" Association="Self.FK_ShowTime_Movie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="ShowTime" EntitySet="ShowTimes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScreenHall_ServiceProvider" Association="Self.FK_ScreenHall_ServiceProvider">
+      <End Role="ServiceProvider" EntitySet="ServiceProviders" />
+      <End Role="ScreenHall" EntitySet="ScreenHalls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowTime_Screen" Association="Self.FK_ShowTime_Screen">
+      <End Role="ScreenHall" EntitySet="ScreenHalls" />
+      <End Role="ShowTime" EntitySet="ShowTimes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_ServiceCategory" Association="Self.FK_Service_ServiceCategory">
+      <End Role="ServiceCategory" EntitySet="ServiceCategories" />
+      <End Role="Service" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_ServiceProvider" Association="Self.FK_Service_ServiceProvider">
+      <End Role="ServiceProvider" EntitySet="ServiceProviders" />
+      <End Role="Service" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_ShowTime" Association="Self.FK_Ticket_ShowTime">
+      <End Role="ShowTime" EntitySet="ShowTimes" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

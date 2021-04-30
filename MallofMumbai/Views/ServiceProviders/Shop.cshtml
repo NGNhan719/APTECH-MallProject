@@ -1,0 +1,130 @@
+﻿@using MumbaiMallLibrary;
+@model IEnumerable<MumbaiMallLibrary.ServiceProvider>
+
+@{
+    ViewBag.Title = "Shop";
+}
+
+<!-- HERO SECTION BEGIN -->
+<div id="hero" style="background-image: url(@Url.Content("~/Content/image/606473d519a2f.jpg")">
+    <div class="hero container">
+        <h6><span>Enjoy your shopping at our mall</span></h6>
+    </div>
+</div>
+<!-- HERO SECTION END -->
+<div id="servicefield">
+    <div class="servicefield container">
+        <div class="servicefield-content">
+            <div class="pathbar">
+                <div class="path-info">
+                    <div class="path-root">
+                        @Html.ActionLink("Mumbai Mall", "Index", "Home")
+                    </div>
+                    <div class="path-page">
+                        <a href="#">Shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-info">
+                <div class="service-wrapper">
+                    <div class="directory-header">
+                        <p>Directory</p>
+                    </div>
+                    <div class="category">
+                        <div class="category-list">
+                            <ul class="dropdown-list">
+                                <li><button onclick="location.href = '@Url.Action("Shop", "ServiceProviders", new { @filter = 0, @sort = Request["sort"]})'">All</button></li>
+                                @foreach (var category in ViewData["shopCateList"] as List<ServiceCategory>)
+                                {
+                                    <li><button onclick="location.href = '@Url.Action("Shop", "ServiceProviders", new { @filter = category.Id, @sort = Request["sort"]})'">@category.CategoryName</button></li>
+                                }
+                            </ul>
+                            <span class="arrow"><i class="fas fa-chevron-right fa-1x"></i></span>
+                        </div>
+                    </div>
+                    <div class="sort">
+                        <div class="sort-type">
+                            <p>Sort by: </p>
+                            <ul class="dropdown-list">
+                                <li><button onclick="location.href = '@Url.Action("Shop", "ServiceProviders", new { @filter = Request["filter"] == null? "0" : Request["filter"], @sort = "asc"})'">Name A - Z</button></li>
+                                <li><button onclick="location.href = '@Url.Action("Shop", "ServiceProviders", new { @filter = Request["filter"] == null? "0" : Request["filter"], @sort = "desc"})'">Name Z - A</button></li>
+                            </ul>
+                            <span class="arrow"><i class="fas fa-chevron-right fa-1x"></i></span>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <div class="map-button">
+                            <button><i class="fas fa-map-marked-alt"></i> Map</button>
+                        </div>
+                    </div>
+                    <div class="servicelist">
+                        <div class="servicelist-wrapper">
+                            <div id="unit-wrapper" class="unit-wrapper">
+                                @{
+                                    var i = 0;
+                                }
+                                @foreach (var shop in Model)
+                                {
+                                    if (i >= 3)
+                                    {
+                                        <div class="unit-item" style="display: none">
+                                            <div class="item-banner">
+                                                <img src="@Url.Content("~/Content/image/" + shop.Avatar)" alt="@shop.Name">
+                                            </div>
+                                            <div class="item-info">
+                                                <h3 class="item-name">@shop.Name</h3>
+                                                <p class="item-map">Level @shop.Floor</p>
+                                                <p class="item-open">Monday-Sunday 11:00am-7:00pm</p>
+                                                <div class="location">
+                                                    <button onclick="location.href='@Url.Action("ShopDetails", "ServiceProviders", new {@shop.Id })'">Details</button>
+                                                    <a href="">Show Direction <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="unit-item">
+                                            <div class="item-banner">
+                                                <img src="@Url.Content("~/Content/image/" + shop.Avatar)" alt="@shop.Name">
+                                            </div>
+                                            <div class="item-info">
+                                                <h3 class="item-name">@shop.Name</h3>
+                                                <p class="item-map">Level @shop.Floor</p>
+                                                <p class="item-open">Monday-Sunday 11:00am-7:00pm</p>
+                                                <div class="location">
+                                                    <button onclick="location.href='@Url.Action("ShopDetails", "ServiceProviders", new {@shop.Id })'">Details</button>
+                                                    <a href="">Show Direction <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    i++;
+                                }
+                            </div>
+                            <div class="unit-all">
+                                <button class="button-more" onclick="seeAll()">See all</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function seeAll()
+    {
+        var shopWrapper = document.getElementById("unit-wrapper");
+        var shopChildren = shopWrapper.children;
+        for (var i = 0; i < shopChildren.length; i++)
+        {
+            var shopChild = shopChildren[i];
+            shopChild.removeAttribute("style");
+        }
+    }
+</script>
+
