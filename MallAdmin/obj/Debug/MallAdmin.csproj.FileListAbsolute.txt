@@ -84,6 +84,3 @@ D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MallAdmin\obj\Debug\MallAdmin.
 D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MallAdmin\obj\Debug\MallAdmin.csproj.CopyComplete
 D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MallAdmin\obj\Debug\MallAdmin.dll
 D:\Learn to Code\Aptech\sem3\project\MallofMumbai\MallAdmin\obj\Debug\MallAdmin.pdb
-C:\Users\Admin\Desktop\APTECH-MallProject\MallAdmin\obj\Debug\MallAdmin.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Desktop\APTECH-MallProject\MallAdmin\obj\Debug\MallAdmin.dll
-C:\Users\Admin\Desktop\APTECH-MallProject\MallAdmin\obj\Debug\MallAdmin.pdb
