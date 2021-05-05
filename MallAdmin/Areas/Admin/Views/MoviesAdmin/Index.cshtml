@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Models.Framework.Movie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_mainlayout.cshtml";
+}
+
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Movies</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Dashboard</a></li>
+            <li class="breadcrumb-item active">Movies</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+
+            </div>
+            <div class="card-body">
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>ReleaseDate</th>
+                                <th>RunningTime</th>
+                                <th>Introduction</th>
+                                <th>Trailer</th>
+                                <th>Rate</th>
+                                <th></th>
+                            </tr>
+
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>ReleaseDate</th>
+                                <th>RunningTime</th>
+                                <th>Introduction</th>
+                                <th>Trailer</th>
+                                <th>Rate</th>
+                                <th></th>
+                            </tr>
+
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.Id
+                                    </td>
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td>
+                                        @item.ReleaseDate
+                                    </td>
+                                    <td>
+                                        @item.RunningTime
+                                    </td>
+                                    <td>
+                                        @item.Introduction
+                                    </td>
+                                    <td>
+                                        @item.Trailer
+                                    </td>
+                                    <td>
+                                        @item.Rate
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

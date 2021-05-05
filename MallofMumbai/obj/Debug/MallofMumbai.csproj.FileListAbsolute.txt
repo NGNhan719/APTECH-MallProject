@@ -167,3 +167,6 @@ D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MallofMumbai\obj\Debug\M
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MallofMumbai\obj\Debug\MallofMumbai.csproj.CopyComplete
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MallofMumbai\obj\Debug\MallofMumbai.dll
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MallofMumbai\obj\Debug\MallofMumbai.pdb
+C:\Users\Admin\Desktop\APTECH-MallProject\MallofMumbai\obj\Debug\MallofMumbai.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\APTECH-MallProject\MallofMumbai\obj\Debug\MallofMumbai.dll
+C:\Users\Admin\Desktop\APTECH-MallProject\MallofMumbai\obj\Debug\MallofMumbai.pdb
