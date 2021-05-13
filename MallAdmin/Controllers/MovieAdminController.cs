@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MumbaiMallLibrary;
 
 namespace MallAdmin.Controllers
 {
     public class MovieAdminController : Controller
     {
-        // GET: MovieAdmin
+        // GET: MovieAdmin/Index
         public ActionResult Index()
         {
-            return View();
+            using(malldbEntities dbEntites = new malldbEntities())
+            {
+                  return View(dbEntites.Movies.ToList());
+            }
+            
         }
 
         // GET: MovieAdmin/Details/5
@@ -28,13 +33,17 @@ namespace MallAdmin.Controllers
 
         // POST: MovieAdmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Movie movie)
         {
             try
             {
-                // TODO: Add insert logic here
+                using (malldbEntities dbEntites = new malldbEntities())
+                {
+                    dbEntites.Movies.Add(movie);
+                    dbEntites.SaveChanges();
+                }
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
             }
             catch
             {

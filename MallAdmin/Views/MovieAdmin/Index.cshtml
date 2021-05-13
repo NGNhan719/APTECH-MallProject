@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<MumbaiMallLibrary.Movie>
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_mainLayout.cshtml";
 }
@@ -23,30 +25,63 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>ReleaseDate</th>
-                                <th>RunningTime</th>
-                                <th>Introduction</th>
-                                <th>Trailer</th>
-                                <th>Rate</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RunningTime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Pg)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Introduction)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Trailer)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Avatar)
+                                </th>
                                 <th></th>
                             </tr>
 
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>ReleaseDate</th>
-                                <th>RunningTime</th>
-                                <th>Introduction</th>
-                                <th>Trailer</th>
-                                <th>Rate</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RunningTime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Pg)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Introduction)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Trailer)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Avatar)
+                                </th>
                                 <th></th>
                             </tr>
-
                         </tfoot>
+                  
+                        @* @foreach (var item in Model)
+                        {   
+                           <tr>
+                               <td>@item.Name</td>
+                               <td>@item.RunningTime</td>
+                               <td>@item.Pg</td>
+                               <td>@item.Introduction</td>
+                               <td>@item.Trailer</td>
+                               <td>@item.Avatar</td>
+                           </tr>
+                        } *@ 
                     </table>
                 </div>
             </div>
