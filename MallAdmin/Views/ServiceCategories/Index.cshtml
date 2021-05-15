@@ -1,0 +1,133 @@
+﻿@model IEnumerable<MumbaiMallLibrary.ServiceCategory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Categories</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Dashboard</a></li>
+            <li class="breadcrumb-item active">Categories</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+            </div>
+            <div class="card-body">
+                <p id="test">
+                    @Html.ActionLink("Create New", "Create", null, new { target = "category_show", @class = "action-show" })
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="align-text-center">Id</th>
+                                <th class="align-text-center">Category Name</th>
+                                <th class="align-text-center">Sub-Categories</th>
+                                <th class="w-25"></th>
+                            </tr>
+
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th class="align-text-center">Id</th>
+                                <th class="align-text-center">Category Name</th>
+                                <th class="align-text-center">Sub-Categories</th>
+                                <th></th>
+                            </tr>
+
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                if (item.ParentId == null || item.ParentId == 0)
+                                {
+                                    <tr>
+                                        <td class="align-text-center">1</td>
+                                        <td style="display: none">@item.Id</td>
+                                        <td>@item.CategoryName</td>
+                                        <td class="align-text-center">
+                                            <a class="sub-count text-darkblue" data-category="@item.Id">@Model.Count(obj => obj.ParentId == item.Id) sub-categories</a>
+                                        </td>
+                                        <td class="align-text-center">
+                                            <a class="p-2 text-darkblue" href=""><i class="far fa-eye"></i> Show</a> |
+                                            <a class="p-2 text-warning action-show" href="/ServiceCategories/Edit/@item.Id" target="category_show"><i class="fas fa-pen"></i> Edit</a> |
+                                            <button class="p-2 text-danger action-delete" data-id="@item.Id"><i class="far fa-trash-alt"></i> Delete</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<table id="template" style="display: none">
+    @foreach (var item in Model)
+    {
+        if (item.ParentId > 0)
+        {
+            <tr data-categ-parent="@item.ParentId">
+                <td class="align-text-center"></td>
+                <td style="display: none">@item.Id</td>
+                <td>@item.CategoryName</td>
+                <td class="align-text-center">
+                    <a class="sub-count text-darkblue">@Model.Count(obj => obj.ParentId == item.Id) sub-categories</a>
+                </td>
+                <td class="align-text-center">
+                    <a class="p-2 text-darkblue" href=""><i class="far fa-eye"></i> Show</a> |
+                    <a class="p-2 text-warning action-show" href="/ServiceCategories/Edit/@item.Id" target="category_show"><i class="fas fa-pen"></i> Edit</a> |
+                    <button class="p-2 text-danger action-delete" data-id="@item.Id"><i class="far fa-trash-alt"></i> Delete</button>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //Show sub category
+        $('.sub-count').click(function () {
+            var parentTr = $(this).closest('tr');
+            var parentId = $(this).data('category');
+            var subCategory = $('#template tr[data-categ-parent="' + parentId + '"]').removeAttr('style');
+
+            parentTr.after(subCategory);
+        });
+
+        //Open and close form
+        $('.action-show').click(function () {
+            $('.form-frame').removeAttr('style');
+        });
+
+        $('.form-frame').click(function () {
+            $('.form-frame').attr('style', 'display: none');
+            $('iframe').attr('src', 'about:blank');
+        })
+
+        //Delete record
+        $('.action-delete').click(function () {
+            var option = confirm('Are you sure you wish to delete this record?');
+
+            if (!option) return;
+
+            var deleteId = $(this).data('id');
+            var url = '@Url.Action("DeleteConfirmed", "ServiceCategories")';
+
+            $.post(url + '/' + deleteId, function (data) {
+                location.reload()
+            })
+        })
+    })
+</script>
+
+<div class="form-frame" style="display: none">
+    <iframe style="display: block; border: none; background-color: white; height: 100vh; width: 1050px; margin: 0 auto;" src="" name="category_show" title="Iframe Form"></iframe>
+</div>

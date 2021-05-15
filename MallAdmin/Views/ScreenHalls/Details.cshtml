@@ -1,0 +1,83 @@
+﻿@model MumbaiMallLibrary.ScreenHall
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ScreenHall</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ScreenName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScreenName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FromDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opened)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opened)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Closed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Closed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceProvider.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceProvider.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

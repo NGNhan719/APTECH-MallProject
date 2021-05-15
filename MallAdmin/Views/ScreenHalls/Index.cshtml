@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MumbaiMallLibrary.ScreenHall>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Movies</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Dashboard</a></li>
+            <li class="breadcrumb-item active">Movies</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+
+            </div>
+            <div class="card-body">
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Screen Name</th>
+                                <th>Service Provider</th>
+                                <th>Seat Quantity</th>
+                                <th>Avatar</th>
+                                <th>Open Hour</th>
+                                <th></th>
+                            </tr>
+
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Id</th>
+                                <th>Screen Name</th>
+                                <th>Service Provider</th>
+                                <th>Seat Quantity</th>
+                                <th>Avatar</th>
+                                <th>Open Hour</th>
+                                <th></th>
+                            </tr>
+
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.ScreenName</td>
+                                    <td style="white-space:nowrap">@item.ServiceProvider.Name</td>
+                                    <td>@item.SeatQty</td>
+                                    <td>@item.Avatar</td>
+                                    <td style="white-space: nowrap">@Enum.GetName(typeof(DayOfWeek), item.FromDay) - @Enum.GetName(typeof(DayOfWeek), item.ToDay) <br /> @item.Opened.Value.ToString(@"hh\:mm") - @item.Closed.Value.ToString(@"hh\:mm")</td>
+                                    <td class="d-flex align-text-center flex-nowrap align-items-center">
+                                        <a class="p-2 text-darkblue d-flex flex-nowrap align-items-center justify-content-between" href=""><i class="far fa-eye"></i> Show</a> |
+                                        <a class="p-2 text-warning d-flex flex-nowrap align-items-center justify-content-between" href=""><i class="fas fa-pen"></i> Edit</a> |
+                                        <a class="p-2 text-danger d-flex flex-nowrap align-items-center justify-content-between" href=""><i class="far fa-trash-alt"></i> Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
