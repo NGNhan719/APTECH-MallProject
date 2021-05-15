@@ -99,9 +99,9 @@ ul {
 
 /*Header Section*/
 #header {
-    background-color: transparent;
+    background-color: #ffffff;
+    position: fixed;
     width: 100%;
-    /*position: fixed;*/
     top: 0;
     left: 0;
     height: auto;
@@ -110,6 +110,7 @@ ul {
 
     #header .header {
         min-height: 8vh;
+        box-shadow: 0 0 8px 0 rgb(153 153 153 / 50%);
     }
 
     #header .navbar {
@@ -118,14 +119,19 @@ ul {
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        max-width: 1300px;
+        padding: 0 10px;
     }
 
 .navbar .hamburger {
     width: 60px;
     height: 60px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 100;
+    cursor: pointer;
 }
 
     .navbar .hamburger .bar {
@@ -144,6 +150,8 @@ ul {
             width: 100%;
             background-color: #38305f;
             left: 0;
+            transition: .3s ease;
+            transition-property: top, bottom;
         }
 
         .navbar .hamburger .bar::before {
@@ -154,32 +162,74 @@ ul {
             top: 8px;
         }
 
-.navbar .nav-list ul {
-    display: none;
+.hamburger.active .bar::before {
+    bottom: 0;
 }
 
+.hamburger.active .bar::after {
+    top: 0;
+}
+
+.navbar .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    overflow-x: hidden;
+    transition: .5s ease left;
+}
+
+.nav-list ul.active {
+    left: 0%;
+}
+
+.nav-list ul a {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: rgb(31, 30,30);
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+
+    .nav-list ul a::after {
+        content: attr(data-after);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        color: rgba(255,0,0,0.1);
+        font-size: 12rem;
+        letter-spacing: 50px;
+        z-index: -1;
+        transition: .3s ease letter-spacing;
+    }
+
+.nav-list ul li:hover a {
+    color: crimson;
+}
+
+    .nav-list ul li:hover a::after {
+        transform: translate(-50%, -50%) scale(1);
+        letter-spacing: initial;
+    }
+
 .navbar .logo {
-    width: 80%;
-    text-align: center;
+    width: 20%;
 }
 
     .navbar .logo .logo-img img {
         max-width: 100px;
-    }
-
-.navbar .search {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-    .navbar .search button {
-        background-color: transparent;
-        width: 100%;
-        height: 100%;
-        color: #38305f;
     }
 /*End of Header Section*/
 
@@ -193,7 +243,7 @@ ul {
 
     #hero::after {
         content: '';
-        background-image: linear-gradient(180deg,#ffffff 0%,#29323c 20%,rgb(0 0 0 / 85%));
+        /*background-image: linear-gradient(180deg,#ffffff 0%,#29323c 20%,rgb(0 0 0 / 85%));*/
         position: absolute;
         width: 100%;
         height: 100%;
@@ -503,7 +553,7 @@ ul {
 }
 
     .d-gallery-item .d-gallery-img-1 {
-        background-image: url(../image/gallery/01b7ff8d54379932128e067540e5aaa265efe4524c76dcf07d477a5dbd806106.jpg);
+        background-image: url(image/gallery/01b7ff8d54379932128e067540e5aaa265efe4524c76dcf07d477a5dbd806106.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -516,7 +566,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-2 {
-        background-image: url(../image/gallery/022318934a335500b671bfec3ae0681ee861fda237be3f1d02d8da346dfc9b24.jpg);
+        background-image: url(image/gallery/022318934a335500b671bfec3ae0681ee861fda237be3f1d02d8da346dfc9b24.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -529,7 +579,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-3 {
-        background-image: url(../image/gallery/0bc6f718efe34d695d7722e8921be0113d3dffd1c6888eee2bd86141145f8370.jpg);
+        background-image: url(image/gallery/0bc6f718efe34d695d7722e8921be0113d3dffd1c6888eee2bd86141145f8370.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -542,7 +592,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-4 {
-        background-image: url(../image/gallery/1239c8ff8c9a4f530fe1823a68017a5eaa8ce016613cb3764619e08195e29756.jpg);
+        background-image: url(image/gallery/1239c8ff8c9a4f530fe1823a68017a5eaa8ce016613cb3764619e08195e29756.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -555,7 +605,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-5 {
-        background-image: url(../image/gallery/19b200510cbdb052b2a5265a5e0d1b4420b5cdbe69052170cd5ccc1b872f231c.jpg);
+        background-image: url(image/gallery/19b200510cbdb052b2a5265a5e0d1b4420b5cdbe69052170cd5ccc1b872f231c.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -568,7 +618,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-6 {
-        background-image: url(../image/gallery/25d7932e9fea6724acf152f81a28a9391467750c3685208abf8bb4363614e25c.jpg);
+        background-image: url(image/gallery/25d7932e9fea6724acf152f81a28a9391467750c3685208abf8bb4363614e25c.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -581,7 +631,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-7 {
-        background-image: url(../image/gallery/264fd2319686ceef1828eac7bc0377ffc37646ad7994748b489ec5c2e0e440f4.jpg);
+        background-image: url(image/gallery/264fd2319686ceef1828eac7bc0377ffc37646ad7994748b489ec5c2e0e440f4.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -594,7 +644,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-8 {
-        background-image: url(../image/gallery/2e90f5a37cd3b909a1acf348c2cfd1ca60eb86479b5859baf942bdf76f70f30e.jpg);
+        background-image: url(image/gallery/2e90f5a37cd3b909a1acf348c2cfd1ca60eb86479b5859baf942bdf76f70f30e.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -607,7 +657,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-9 {
-        background-image: url(../image/gallery/34241f2259fe3f9f87da756526d451080caa5a31e8588984a7bf9c52f5147ef2.jpg);
+        background-image: url(image/gallery/34241f2259fe3f9f87da756526d451080caa5a31e8588984a7bf9c52f5147ef2.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -620,7 +670,7 @@ ul {
         }
 
     .d-gallery-item .d-gallery-img-10 {
-        background-image: url(../image/gallery/3d02a29b797e14de5f46cb58996365613f916f733d47a2bce7cfcaf0a1fb50f0.jpg);
+        background-image: url(image/gallery/3d02a29b797e14de5f46cb58996365613f916f733d47a2bce7cfcaf0a1fb50f0.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -1591,12 +1641,12 @@ ul {
 /*End of Cinema Page*/
 
 /*Booking Ticket*/
-#header .logo {
+#header .vox-logo {
     width: 100%;
     box-shadow: 0 0 8px 0 rgb(153 153 153 / 50%);
 }
 
-    #header .logo::before {
+    #header .vox-logo::before {
         content: "";
         background-color: rgb(0 157 219);
         height: 5px;
@@ -1604,8 +1654,8 @@ ul {
         display: block;
     }
 
-    #header .logo .vox {
-        background-image: url(../image/icon/logo-288x92.png);
+    #header .vox-logo .vox {
+        background-image: url(image/icon/logo-288x92.png);
         width: 125px;
         height: 40px;
         text-indent: -99999px;
@@ -1678,7 +1728,7 @@ ul {
     }
 
 .seats .step-header::before {
-    background: url(../image/icon/icon-seats-256x256.png) 0 0 no-repeat;
+    background: url(image/icon/icon-seats-256x256.png) 0 0 no-repeat;
     background-size: 24px 24px;
 }
 
@@ -1706,7 +1756,7 @@ ul {
     }
 
         .seats .seats-screen .s-screen .black-drop {
-            background-image: url(../image/icon/seats-screen-light%402x.png);
+            background-image: url(image/icon/seats-screen-light%402x.png);
             background-size: cover;
             height: 60px;
             width: 100%;
@@ -1899,7 +1949,7 @@ hr {
     }
 
 .pay .step-header::before {
-    background: url(../image/icon/icon-payment-256x256.png) 0 0 no-repeat;
+    background: url(image/icon/icon-payment-256x256.png) 0 0 no-repeat;
     background-size: 24px 24px;
 }
 
@@ -2078,10 +2128,215 @@ form button {
 
 /*Desktop Screen*/
 @media only screen and (min-width: 992px) {
+    /*Header*/
+    #header .hamburger {
+        display: none;
+    }
+
+    #header .nav-list ul {
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+
+        #header .nav-list ul li {
+            display: inline-block;
+        }
+
+            #header .nav-list ul li a {
+                font-size: 1.8rem;
+            }
+
+        #header .nav-list ul a:after {
+            display: none;
+        }
+    /*ENd Header*/
+
     .brand-show-list, .food-court-list {
         width: 95%;
         justify-content: center;
     }
+
+    /*Shopping*/
+    .servicefield-content .service-info .service-wrapper {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: unset;
+        flex-wrap: wrap;
+    }
+
+    .service-wrapper .directory-header {
+        width: 50%;
+        order: 1;
+    }
+
+    .service-wrapper .sort {
+        width: 40%;
+        order: 2;
+    }
+
+    .service-wrapper .map {
+        width: 10%;
+        order: 3;
+    }
+
+    .service-wrapper .category {
+        width: 30%;
+        order: 4;
+    }
+
+    .service-wrapper .servicelist {
+        width: 70%;
+        order: 5;
+    }
+
+    .unit-wrapper .unit-item {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .unit-item .item-banner {
+        flex: 0 0 50%;
+        min-height: 200px;
+    }
+
+    .unit-item .item-info {
+        flex: 0 0 50%;
+        min-height: 200px;
+    }
+
+    .unit-item .item-banner::before {
+        padding-top: 60%;
+    }
+
+    .service-wrapper .category .category-list {
+        width: 80%;
+    }
+
+    .category-list .dropdown-list li {
+        visibility: visible !important;
+    }
+    /*End of shopping*/
+
+    /*Provider details*/
+    #business {
+        margin-top: 80px;
+    }
+
+    .business-main {
+        width: 100%;
+    }
+
+    .business-info .business-intro {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+
+    .biz-pic-container {
+        width: 50%;
+    }
+
+    .biz-paragraph {
+        width: 40%;
+    }
+
+    .biz-pic-container::before {
+        padding-bottom: 70%;
+    }
+    /*End of Provider details*/
+
+    /*Showtime*/
+    #cinema {
+        margin-top: 80px;
+    }
+
+        #cinema .cinema-main {
+            width: 90%;
+        }
+
+    #movie .movie .movie-main {
+        width: 100%;
+        align-items: center;
+    }
+
+    .movie-main .m-navbar {
+        width: 90%;
+    }
+
+    .movie-main .m-content {
+        width: 90%;
+        padding: 0 0;
+    }
+
+    .m-header-text {
+        text-align: center;
+    }
+
+    .movie-main .m-navbar .m-nav {
+        justify-content: center;
+    }
+
+    .m-movie-card .m-movie-poster {
+        width: 25%;
+    }
+
+    .m-movie-card .m-movie-data {
+        width: 75%;
+    }
+
+    .m-movie-card .m-movie-poster::before {
+        padding-bottom: 130%;
+    }
+
+    .m-movie-data .m-movie-info::before {
+        padding-bottom: 10%;
+    }
+
+    .m-movie-plot p {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .m-movie-data .m-movie-plot::after {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+
+    .m-movie-data .m-movie-screen {
+        align-items: flex-start;
+    }
+
+    .m-screen-block {
+        margin-left: 0;
+    }
+
+    .m-content-wrapper .m-movie-card::after {
+        margin-top: 80px;
+    }
+    /*End of showtime*/
+
+    /*Booking*/
+    #booking .booking {
+        width: 70%;
+        margin: 0 auto
+    }
+
+    .pay .pay-detail {
+        flex-direction: row-reverse;
+    }
+
+    .card-providers .card-providers-logo {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+    }
+
+    .card-providers img {
+        height: 50px
+    }
+    /*Booking tickets*/
 }
 /*End of Desktop Screen*/
 /*End of Screen Size*/
