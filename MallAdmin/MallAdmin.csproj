@@ -375,6 +375,10 @@
     <Content Include="Views\CreditCards\Edit.cshtml" />
     <Content Include="Views\CreditCards\Index.cshtml" />
     <Content Include="Views\Shared\_success.cshtml" />
+    <Content Include="Views\MovieAdmin\Create.cshtml" />
+    <Content Include="Views\MovieAdmin\Details.cshtml" />
+    <Content Include="Views\MovieAdmin\Edit.cshtml" />
+    <Content Include="Views\MovieAdmin\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
