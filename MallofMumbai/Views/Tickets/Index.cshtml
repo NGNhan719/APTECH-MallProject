@@ -1,0 +1,1008 @@
+﻿@model IEnumerable<MumbaiMallLibrary.Ticket>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCD Mall Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <div id="header">
+        <div class="header container">
+            <div class="vox-logo">
+                <a href="#" class="vox">Vox Cinema</a>
+            </div>
+        </div>
+    </div>
+    <!-- HEADER SECTION END -->
+    <!-- BOOKING SECTION -->
+    <div id="booking">
+        <div class="booking container">
+            <div class="booking-header">
+                <h2>Book tickets</h2>
+            </div>
+            <div class="seats">
+                <div class="step-header">
+                    <h3>Choose seats</h3>
+                </div>
+                <div class="seats-screen">
+                    <div class="s-screen">
+                        <span class="black-drop"></span>
+                        <span class="screen">Screen</span>
+                        <span class="distance left">5m</span>
+                        <span class="distance right">5m</span>
+                    </div>
+                    <div class="s-seats">
+                        <form action="">
+                            <div class="seats-plan">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat standard blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium blank">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                            <td class="seat premium">
+                                                <label title="1">
+                                                    <input type="checkbox" name="seat" value="1">
+                                                    <span>1</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <hr class="dashed">
+                                <div class="s-key">
+                                    <ul>
+                                        <li class="sold"><span></span> Unavailable</li>
+                                        <li class="allocated"><span></span> Your seat</li>
+                                        <li class="standard"><span></span> Standard</li>
+                                        <li class="premium"><span></span> Premium</li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="seats-confirm">
+                                    <h3>Your choosen seats</h3>
+                                    <p class="no-seat">No seat selected</p>
+                                    <!-- <p class=""><span></span> x2 Premium - 40.3 USD per ticket</p>
+                                    <p class=""><span></span> x1 Standard - 20.3 USD per ticket</p> -->
+                                    <button>Confirm seats</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="pay">
+                <div class="step-header">
+                    <h3>Payment</h3>
+                </div>
+                <div class="pay-detail">
+                    <div class="card-providers">
+                        <div class="card-providers-logo">
+                            <img src="@Url.Content("~/Content/image/icon/visa-logo.jpg")" alt="Visa card">
+                            <img src="@Url.Content("~/Content/image/icon/mastercard-logo.jpg")" alt="Master card">
+                            <img src="@Url.Content("~/Content/image/icon/citibank-logo.png")" alt="Citibank card">
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="card-form">
+                            <div class="form-item">
+                                <label>Name on Card</label>
+                                <input type="text" name="cardOwner" placeholder="Your name">
+                            </div>
+                            <div class="form-item">
+                                <label>Card number</label>
+                                <input type="text" name="cardNumber" placeholder="Your card number">
+                            </div>
+
+                            <div class="form-item">
+                                <label>Expired on</label>
+                                <input type="text" name="expiredDate" placeholder="MM/YY">
+                            </div>
+                            <div class="form-item">
+                                <label>CVC</label>
+                                <input type="text" name="cvc" placeholder="XXX">
+                            </div>
+                        </div>
+                        <button>Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BOOKING SECTION END -->
+    <!-- FOOTER SECTION-->
+    <div id="footer">
+        <div class="footer">
+            <p>Copyright 2021 Related Companies. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!-- FOOTER SECTION END -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

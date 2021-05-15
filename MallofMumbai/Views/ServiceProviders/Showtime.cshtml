@@ -70,43 +70,44 @@
             </div>
             <div class="m-content">
                 <div class="m-content-wrapper">
-                    <div class="m-movie-card">
                     @foreach (var movieG in Model.ToList().GroupBy(obj => obj.Movie))
                     {
-                        <div class="m-movie-poster">
-                            <img src="@Url.Content("~/Content/image/movie/" + movieG.Key.Avatar)" alt="@movieG.Key.Name">
-                        </div>
-                        <div class="m-movie-data">
-                            <div class="m-movie-info">
-                                <div class="m-movie-info-wrapper">
-                                    <h3 class="movie-name">@movieG.Key.Name</h3>
-                                    <ul class="movie-spec">
-                                        <li class="spec-pg">@movieG.Key.Pg</li>
-                                        <li class="spec-time">@movieG.Key.RunningTime min</li>
-                                    </ul>
-                                    <button class="movie-trailer">Watch trailer</button>
+                        <div class="m-movie-card">
+                            <div class="m-movie-poster">
+                                <img src="@Url.Content("~/Content/image/movie/" + movieG.Key.Avatar)" alt="@movieG.Key.Name">
+                            </div>
+                            <div class="m-movie-data">
+                                <div class="m-movie-info">
+                                    <div class="m-movie-info-wrapper">
+                                        <h3 class="movie-name">@movieG.Key.Name</h3>
+                                        <ul class="movie-spec">
+                                            <li class="spec-pg">@movieG.Key.Pg</li>
+                                            <li class="spec-time">@movieG.Key.RunningTime min</li>
+                                        </ul>
+                                        <button class="movie-trailer">Watch trailer</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="m-movie-plot">
-                                <p class="plot-summary">@movieG.Key.Introduction</p>
-                            </div>
-                            <div class="m-movie-screen">
-                            @foreach (var screenHallG in movieG.GroupBy(obj => obj.ScreenHall))
-                            {
-                                <div class="m-screen-block">
-                                    <p>@screenHallG.Key.ScreenName</p>
-                                    <ul class="m-screen-showtime">
-                                    @foreach (var item in screenHallG)
+                                <div class="m-movie-plot">
+                                    <p class="plot-summary">@movieG.Key.Introduction</p>
+                                </div>
+                                <div class="m-movie-screen">
+                                    @foreach (var screenHallG in movieG.GroupBy(obj => obj.ScreenHall))
                                     {
-                                        <li><a href="#">@item.StartHour</a></li>
+                                        <div class="m-screen-block">
+                                            <p>@screenHallG.Key.ScreenName</p>
+                                            <ul class="m-screen-showtime">
+                                                @foreach (var item in screenHallG)
+                                                {
+                                                    <li><a href="@Url.Action("Index", "Tickets")">@item.StartHour</a></li>
+                                                }
+                                            </ul>
+                                        </div>
                                     }
-                                    </ul>
                                 </div>
-                            }
                             </div>
                         </div>
+
                     }
-                    </div>
                 </div>
             </div>
         </div>

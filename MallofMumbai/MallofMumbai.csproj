@@ -193,14 +193,22 @@
     <Content Include="Content\image\gallery\e8f39bd5ed4d0118a303767f2c645b7b3e47db4d4ce37ae626fb1a9d9d51d726.jpg" />
     <Content Include="Content\image\gallery\f6667357b6c984144aba4006d6143876456d55858225a1384d98c5b09f4b99d5.jpg" />
     <Content Include="Content\image\gallery\fb1b6b26435e6998893e1598d5adf042387efefa7cd1b7fe8cda5809d8451591.jpg" />
+    <Content Include="Content\image\icon\citibank-logo.png" />
     <Content Include="Content\image\icon\facebook_black.svg" />
+    <Content Include="Content\image\icon\icon-payment-256x256.png" />
+    <Content Include="Content\image\icon\icon-seats-256x256.png" />
     <Content Include="Content\image\icon\icons8_play_button_32px.png" />
     <Content Include="Content\image\icon\instagram_black.svg" />
+    <Content Include="Content\image\icon\logo-288x92.png" />
+    <Content Include="Content\image\icon\mastercard-logo.jpg" />
+    <Content Include="Content\image\icon\seats-screen-light%402x.png" />
     <Content Include="Content\image\icon\showlistbg-h.png" />
     <Content Include="Content\image\icon\showlistbg-mob.png" />
     <Content Include="Content\image\icon\twitter_black.svg" />
+    <Content Include="Content\image\icon\visa-logo.jpg" />
     <Content Include="Content\image\logo-1.png" />
     <Content Include="Content\image\logo.png" />
+    <Content Include="Content\image\moe-beauty-2-2000-750.jpg" />
     <Content Include="Content\image\movie\P_HO00008235.jpg" />
     <Content Include="Content\image\movie\P_HO00008247.jpg" />
     <Content Include="Content\image\movie\P_HO00008305.jpg" />
@@ -354,6 +362,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiceProvidersController.cs" />
+    <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -368,16 +377,16 @@
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="Views\Shared\_GalleryPartial.cshtml" />
     <Content Include="Views\Shared\_SignUpPartial.cshtml" />
-    <Content Include="Views\ServiceProviders\Create.cshtml" />
-    <Content Include="Views\ServiceProviders\Delete.cshtml" />
-    <Content Include="Views\ServiceProviders\Details.cshtml" />
-    <Content Include="Views\ServiceProviders\Edit.cshtml" />
-    <Content Include="Views\ServiceProviders\Index.cshtml" />
     <Content Include="Views\ServiceProviders\Shop.cshtml" />
-    <Content Include="Views\ServiceProviders\ShopDetails.cshtml" />
+    <Content Include="Views\ServiceProviders\Details.cshtml" />
     <Content Include="Views\ServiceProviders\FoodCourt.cshtml" />
     <Content Include="Views\ServiceProviders\Showtime.cshtml" />
     <Content Include="Views\ServiceProviders\FoodCourtDetails.cshtml" />
+    <Content Include="Views\Tickets\Create.cshtml" />
+    <Content Include="Views\Tickets\Delete.cshtml" />
+    <Content Include="Views\Tickets\Details.cshtml" />
+    <Content Include="Views\Tickets\Edit.cshtml" />
+    <Content Include="Views\Tickets\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -387,6 +396,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
