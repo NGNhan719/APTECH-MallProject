@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MumbaiMallLibrary;
+using System.Data.Entity;
 
 namespace MallAdmin.Controllers
 {
@@ -12,9 +13,9 @@ namespace MallAdmin.Controllers
         // GET: MovieAdmin/Index
         public ActionResult Index()
         {
-            using(malldbEntities dbEntites = new malldbEntities())
+            using(malldbEntities dbEntities = new malldbEntities())
             {
-                  return View(dbEntites.Movies.ToList());
+                  return View(dbEntities.Movies.ToList());
             }
             
         }
@@ -22,7 +23,11 @@ namespace MallAdmin.Controllers
         // GET: MovieAdmin/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            using(malldbEntities dbEntities = new malldbEntities())
+            {
+                return View( dbEntities.Movies.Where(x => x.Id == id).FirstOrDefault());
+            }
+            
         }
 
         // GET: MovieAdmin/Create
@@ -37,10 +42,10 @@ namespace MallAdmin.Controllers
         {
             try
             {
-                using (malldbEntities dbEntites = new malldbEntities())
+                using (malldbEntities dbEntities = new malldbEntities())
                 {
-                    dbEntites.Movies.Add(movie);
-                    dbEntites.SaveChanges();
+                    dbEntities.Movies.Add(movie);
+                    dbEntities.SaveChanges();
                 }
 
                     return RedirectToAction("Index");
@@ -54,18 +59,26 @@ namespace MallAdmin.Controllers
         // GET: MovieAdmin/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            using (malldbEntities dbEntities = new malldbEntities())
+            {
+                return View(dbEntities.Movies.Where(x => x.Id == id).FirstOrDefault());
+            }
         }
 
         // POST: MovieAdmin/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Movie movie)
         {
             try
             {
-                // TODO: Add update logic here
-
+                using(malldbEntities dbEntities = new malldbEntities())
+                {
+                    dbEntities.Entry(movie).State = EntityState.Modified;
+                    dbEntities.SaveChanges();
+                   
+                }
                 return RedirectToAction("Index");
+
             }
             catch
             {
@@ -76,7 +89,11 @@ namespace MallAdmin.Controllers
         // GET: MovieAdmin/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            using (malldbEntities dbEntities = new malldbEntities())
+            {
+                return View(dbEntities.Movies.Where(x => x.Id == id).FirstOrDefault());
+            }
+            
         }
 
         // POST: MovieAdmin/Delete/5
@@ -85,7 +102,12 @@ namespace MallAdmin.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                using(malldbEntities dbEntities = new malldbEntities())
+                {
+                    Movie movie = dbEntities.Movies.Where(x => x.Id == id).FirstOrDefault();
+                    dbEntities.Movies.Remove(movie);
+                    dbEntities.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }
