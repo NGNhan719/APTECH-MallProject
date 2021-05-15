@@ -1,0 +1,91 @@
+﻿@using MumbaiMallLibrary;
+@model MumbaiMallLibrary.ServiceCategory
+
+@{
+    ViewBag.Title = "Create";
+    //Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>The Mall of Mumbai Website</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/form-style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/Assets/Admin/dist/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="~/Assets/Admin/src/assets/demo/chart-area-demo.js"></script>
+    <script src="~/Assets/Admin/src/assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="~/Assets/Admin/src/assets/demo/datatables-demo.js"></script>
+</head>
+<body>
+    <div id="form-info">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 title bg-portgore">
+                    <div class="title-text">
+                        <h1><span></span>Edit Category Details</h1>
+                    </div>
+                </div>
+                <div class="col-12 form-wrapper">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.HiddenFor(model => model.Id)
+                        <div class="form-details form-group">
+                            @*<input type="number" name="id" class="form-control" hidden>*@
+                            <div>
+                                @Html.LabelFor(model => model.CategoryName)
+                                @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control input-outline-bottom" } })
+                            </div>
+                            <div class="type-checkbox">
+                                <div class="form-check-inline">
+                                    <label>Type:</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input id="category" type="checkbox" class="form-check-input">Root Category
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input id="sub-category" type="checkbox" class="form-check-input"> Sub-Category
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="category-drop wrap-drop dropdown">
+                                <div>
+                                    <label>Category</label>
+                                </div>
+                                @Html.DropDownListFor(m => m.ParentId, new SelectList(ViewBag.SubCategories, "Id", "CategoryName", Model.ParentId), "Select a root Category", new { @class = "dropdown-menu category-root", style = "display:block" })
+                            </div>
+                            <div class="submit-area">
+                                <button type="submit" class="btn btn-portgore">Proceed</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ParentId > option").each(function () {
+                $(this).addClass('dropdown-item');
+            });
+        });
+    </script>
+</body>
+</html>

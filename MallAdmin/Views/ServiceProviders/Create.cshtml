@@ -1,0 +1,169 @@
+﻿@model MumbaiMallLibrary.ServiceProvider
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mall of Mumbai Website</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/form-style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/Assets/Admin/dist/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="~/Assets/Admin/src/assets/demo/chart-area-demo.js"></script>
+    <script src="~/Assets/Admin/src/assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="~/Assets/Admin/src/assets/demo/datatables-demo.js"></script>
+</head>
+<body>
+    <div id="form-info">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 title bg-portgore">
+                    <div class="title-text">
+                        <h1><span></span>Provider Details</h1>
+                    </div>
+                </div>
+                <div class="col-12 form-wrapper provider-info">
+                    <form id="provider-info" action="#" style="width: 100%">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-details form-group">
+                                        <input type="number" name="id" value="" hidden>
+                                        <div>
+                                            <label for="name">Provider name:</label>
+                                            <input type="text" name="name" class="form-control input-outline-bottom" placeholder="Name" value="">
+                                        </div>
+                                        <div>
+                                            <label for="floor">At floor:</label>
+                                            <input type="text" name="floor" class="form-control input-outline-bottom" placeholder="Floor Number" value="">
+                                        </div>
+                                        <div>
+                                            <label for="tel">Telephone:</label>
+                                            <input type="tel" name="tel" class="form-control input-outline-bottom" placeholder="Tel" value="">
+                                        </div>
+                                        <div class="category-service dropdown">
+                                            <div>
+                                                <label>Category: </label>
+                                            </div>
+                                            <button type="button" class="btn dropdown-toggle unselected" data-toggle="dropdown">
+                                                <span id="selected">Select category</span><span class="caret"></span>
+                                            </button>
+                                            <div class="dropdown-menu action-drop category-root">
+                                                <a class="dropdown-item" href="#" data-id="1">Shopping</a>
+                                                <a class="dropdown-item" href="#" data-id="2">Dining</a>
+                                                <a class="dropdown-item" href="#" data-id="3">Movie</a>
+                                            </div>
+                                            <!-- <input type="number" name="" value="" hidden> -->
+                                        </div>
+                                        <div class="category-service dropdown">
+                                            <div>
+                                                <label>Sub-category: </label>
+                                            </div>
+                                            <button type="button" class="btn dropdown-toggle unselected" data-toggle="dropdown">
+                                                <span id="selected">Select sub-category</span><span class="caret"></span>
+                                            </button>
+                                            <div class="dropdown-menu action-drop category-root">
+                                                <a class="dropdown-item" href="#" data-id="1">Shopping</a>
+                                                <a class="dropdown-item" href="#" data-id="2">Dining</a>
+                                                <a class="dropdown-item" href="#" data-id="3">Movie</a>
+                                            </div>
+                                            <input type="number" name="categoryId" value="" hidden>
+                                        </div>
+                                        <div class="open-close">
+                                            <div class="day-drop dropdown">
+                                                <div>
+                                                    <label>From Day: </label>
+                                                </div>
+                                                <button type="button" class="btn btn-outline-bottom dropdown-toggle unselected" data-toggle="dropdown">
+                                                    <span id="selected">Select a day</span><span class="caret"></span>
+                                                </button>
+                                                <div class="day-menu action-drop dropdown-menu">
+                                                    <a class="dropdown-item" href="#" data-id="1">Sunday</a>
+                                                    <a class="dropdown-item" href="#" data-id="2">Monday</a>
+                                                    <a class="dropdown-item" href="#" data-id="3">Tuesday</a>
+                                                    <a class="dropdown-item" href="#" data-id="4">Wednesday</a>
+                                                    <a class="dropdown-item" href="#" data-id="5">Thursday</a>
+                                                    <a class="dropdown-item" href="#" data-id="6">Friday</a>
+                                                    <a class="dropdown-item" href="#" data-id="7">Saturday</a>
+                                                </div>
+                                            </div>
+                                            <div class="day-drop dropdown">
+                                                <div>
+                                                    <label>To Day: </label>
+                                                </div>
+                                                <button type="button" class="btn btn-outline-bottom dropdown-toggle unselected" data-toggle="dropdown">
+                                                    <span id="selected">Select a day</span><span class="caret"></span>
+                                                </button>
+                                                <div class="day-menu action-drop dropdown-menu">
+                                                    <a class="dropdown-item" href="#" data-id="1">Sunday</a>
+                                                    <a class="dropdown-item" href="#" data-id="2">Monday</a>
+                                                    <a class="dropdown-item" href="#" data-id="3">Tuesday</a>
+                                                    <a class="dropdown-item" href="#" data-id="4">Wednesday</a>
+                                                    <a class="dropdown-item" href="#" data-id="5">Thursday</a>
+                                                    <a class="dropdown-item" href="#" data-id="6">Friday</a>
+                                                    <a class="dropdown-item" href="#" data-id="7">Saturday</a>
+                                                </div>
+                                            </div>
+                                            <input type="number" name="fromDay" value="" hidden>
+                                            <input type="number" name="toDay" value="" hidden>
+                                        </div>
+                                        <div class="open-close">
+                                            <div>
+                                                <label for="opened">Opened hour:</label>
+                                                <input class="form-control open-close-time" type="time" name="opened" value="">
+                                            </div>
+                                            <div>
+                                                <label for="closed">Closed hour:</label>
+                                                <input class="form-control open-close-time" type="time" name="closed" value="">
+                                            </div>
+                                        </div>
+                                        <div class="submit-area">
+                                            <button type="submit" class="btn btn-portgore">Proceed</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="offset-1"></div>
+                                <div class="col-5">
+                                    <div class="form-details form-group">
+                                        <div>
+                                            <label for="description">Description:</label>
+                                            <textarea rows="5" cols="50" name="comment" form="provider-info" class="form-control" placeholder="Enter text here..."></textarea>
+                                        </div>
+                                        <div class="form-details">
+                                            <div>
+                                                <label for="avatar">Avatar:</label>
+                                                <input style="width: 300px" name="files" id="files" type="file" multiple="multiple" />
+                                            </div>
+                                            <input type="text" name="avatar" class="form-control input-outline-bottom" value="" hidden>
+                                            <div>
+                                                <ul id="obj-avatar" class="obj-avatar">
+                                                    <li>
+                                                        <div class="avatar-card">
+                                                            <img src="image/sp-roberto%20cavalli/5df3c55fe426a.png" alt="Avatar">
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
