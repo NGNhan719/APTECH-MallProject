@@ -19,7 +19,7 @@
             </div>
             <div class="card-body">
                 <p>
-                    @Html.ActionLink("Create New", "Create")
+                    @Html.ActionLink("Create New", "Create", null, new { target = "screen_show", @class = "action-show" })
                 </p>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -59,7 +59,7 @@
                                     <td style="white-space: nowrap">@Enum.GetName(typeof(DayOfWeek), item.FromDay) - @Enum.GetName(typeof(DayOfWeek), item.ToDay) <br /> @item.Opened.Value.ToString(@"hh\:mm") - @item.Closed.Value.ToString(@"hh\:mm")</td>
                                     <td class="d-flex align-text-center flex-nowrap align-items-center">
                                         <a class="p-2 text-darkblue d-flex flex-nowrap align-items-center justify-content-between" href=""><i class="far fa-eye"></i> Show</a> |
-                                        <a class="p-2 text-warning d-flex flex-nowrap align-items-center justify-content-between" href=""><i class="fas fa-pen"></i> Edit</a> |
+                                        <a class="p-2 text-warning d-flex flex-nowrap align-items-center justify-content-between action-show" href=""><i class="fas fa-pen"></i> Edit</a> |
                                         <a class="p-2 text-danger d-flex flex-nowrap align-items-center justify-content-between" href=""><i class="far fa-trash-alt"></i> Delete</a>
                                     </td>
                                 </tr>
@@ -71,3 +71,45 @@
         </div>
     </div>
 </main>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //Show sub category
+        $('.sub-count').click(function () {
+            var parentTr = $(this).closest('tr');
+            var parentId = $(this).data('category');
+            var subCategory = $('#template tr[data-categ-parent="' + parentId + '"]').removeAttr('style');
+
+            parentTr.after(subCategory);
+        });
+
+        //Open and close form
+        $('.action-show').click(function () {
+            $('.form-frame').removeAttr('style');
+        });
+
+        $('.form-frame').click(function () {
+            $('.form-frame').attr('style', 'display: none');
+            $('iframe').attr('src', 'about:blank');
+        })
+
+        //Delete record
+        $('.action-delete').click(function () {
+            var option = confirm('Are you sure you wish to delete this record?');
+
+            if (!option) return;
+
+            var deleteId = $(this).data('id');
+            var url = '@Url.Action("DeleteConfirmed", "ServiceCategories")';
+
+            $.post(url + '/' + deleteId, function (data) {
+                location.reload()
+            })
+        })
+    })
+</script>
+
+<div class="form-frame" style="display: none">
+    <iframe style="display: block; border: none; background-color: white; height: 100vh; width: 1050px; margin: 0 auto;" src="" name="screen_show" title="Iframe Form"></iframe>
+</div>
