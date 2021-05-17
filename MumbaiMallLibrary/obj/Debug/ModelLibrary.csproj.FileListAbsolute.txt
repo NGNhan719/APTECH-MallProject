@@ -17,7 +17,6 @@ D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\De
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\EntityFramework.SqlServer.dll
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\EntityFramework.xml
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\EntityFramework.SqlServer.xml
-D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\ModelLibrary.csprojAssemblyReference.cache
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\ModelLibrary.csproj.CoreCompileInputs.cache
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\ModelLibrary.csproj.CopyComplete
 D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\MumbaiMallLibrary.dll
@@ -32,3 +31,4 @@ C:\Users\Admin\Desktop\APTECH-MallProject\MumbaiMallLibrary\bin\Debug\EntityFram
 C:\Users\Admin\Desktop\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\ModelLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\MumbaiMallLibrary.dll
 C:\Users\Admin\Desktop\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\MumbaiMallLibrary.pdb
+D:\Users\NgNha\Documents\GitHub\.net\APTECH-MallProject\MumbaiMallLibrary\obj\Debug\ModelLibrary.csprojAssemblyReference.cache

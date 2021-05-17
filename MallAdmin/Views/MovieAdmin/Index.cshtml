@@ -26,6 +26,9 @@
                         <thead>
                             <tr>
                                 <th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>
+                                <th>
                                     @Html.DisplayNameFor(model => model.Name)
                                 </th>
                                 <th>
@@ -39,9 +42,6 @@
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Trailer)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Avatar)
                                 </th>
                                 <th></th>
                             </tr>
@@ -50,6 +50,9 @@
                         <tfoot>
                             <tr>
                                 <th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>
+                                <th>
                                     @Html.DisplayNameFor(model => model.Name)
                                 </th>
                                 <th>
@@ -64,24 +67,27 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Trailer)
                                 </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Avatar)
-                                </th>
                                 <th></th>
                             </tr>
                         </tfoot>
-                  
-                        @* @foreach (var item in Model)
-                        {   
-                           <tr>
-                               <td>@item.Name</td>
-                               <td>@item.RunningTime</td>
-                               <td>@item.Pg</td>
-                               <td>@item.Introduction</td>
-                               <td>@item.Trailer</td>
-                               <td>@item.Avatar</td>
-                           </tr>
-                        } *@ 
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.RunningTime</td>
+                                    <td>@item.Pg</td>
+                                    <td>@item.Introduction</td>
+                                    <td>@item.Trailer</td>
+                                    <td style="width: 300px" class="d-flex align-text-center flex-nowrap align-items-center">
+                                        <a class="p-2 text-darkblue d-flex flex-nowrap align-items-center justify-content-between" href=""><i class="far fa-eye"></i> Show</a> |
+                                        <a class="p-2 text-warning d-flex flex-nowrap align-items-center justify-content-between action-show" href=""><i class="fas fa-pen"></i> Edit</a> |
+                                        <a class="p-2 text-danger d-flex flex-nowrap align-items-center justify-content-between" href=""><i class="far fa-trash-alt"></i> Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>                         
                     </table>
                 </div>
             </div>

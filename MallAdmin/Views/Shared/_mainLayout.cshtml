@@ -72,8 +72,8 @@
                         </a>
                         <div class="collapse" id="collapseServices" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">Category</a>
-                                <a class="nav-link" href="">Providers</a>
+                                <a class="nav-link" href="@Url.Action("Index","ServiceCategories")">Category</a>
+                                <a class="nav-link" href="@Url.Action("Index","ServiceProviders")">Providers</a>
 
                             </nav>
                         </div>
@@ -90,12 +90,12 @@
 
                             </nav>
                         </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <a  style="display: none" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Pages
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion" style="display: none">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                     Authentication
@@ -122,11 +122,11 @@
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading"></div>
-                        <a class="nav-link" href="charts.html">
+                        <a class="nav-link" href="charts.html"  style="display: none">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
                         </a>
-                        <a class="nav-link" href="tables.html">
+                        <a class="nav-link" href="tables.html" style="display: none">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tables
                         </a>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    Admin
                 </div>
             </nav>
         </div>
