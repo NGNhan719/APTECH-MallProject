@@ -1,4 +1,5 @@
 # APTECH-MallProject
 
-<img src="https://github.com/NGNhan719/APTECH-MallProject/blob/main/screenshot/home.png" width="400px>
+<img src="https://github.com/NGNhan719/APTECH-MallProject/blob/main/screenshot/home.png" width="400px">
+
 ![alt text](https://github.com/NGNhan719/APTECH-MallProject/blob/main/screenshot/home.png){:width="400px"}
